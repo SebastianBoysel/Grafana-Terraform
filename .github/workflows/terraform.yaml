@@ -15,6 +15,8 @@ jobs:
     env:
       TF_VAR_grafana_url: ${{ secrets.GRAFANA_URL }}
       TF_VAR_grafana_api_token: ${{ secrets.GRAFANA_API_TOKEN }}
+      TF_VAR_ds_prometheus: ${{ secrets.DS_PROMETHEUS }}
+      TF_VAR_ds_loki: ${{ secrets.DS_LOKI }}
 
     steps:
       - name: Checkout
@@ -27,8 +29,8 @@ jobs:
         run: terraform init
 
       - name: Terraform Plan
-        run: terraform plan
+        run: terraform plan -input=false
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve -input=false
