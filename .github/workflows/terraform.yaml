@@ -29,12 +29,6 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
-      - name: Debug Terraform Token Visibility
-        run: |
-          echo "TF_API_TOKEN is set: ${TF_API_TOKEN:+yes}"
-          echo "TF_TOKEN_app_terraform_io is set: ${TF_TOKEN_app_terraform_io:+yes}"
-        shell: bash
-
       - name: Terraform Init
         run: terraform init
 
