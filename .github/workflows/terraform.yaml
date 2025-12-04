@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
+      TFE_TOKEN: ${{ secrets.TFC_TOKEN }}
       TF_VAR_grafana_url: ${{ secrets.GRAFANA_URL }}
       TF_VAR_grafana_api_token: ${{ secrets.GRAFANA_API_TOKEN }}
       TF_VAR_ds_prometheus: ${{ secrets.DS_PROMETHEUS }}
