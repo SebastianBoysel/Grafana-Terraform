@@ -1,3 +1,7 @@
+variable "tfe_token" {
+  type        = string
+}
+
 variable "grafana_url" {
   type        = string
 }

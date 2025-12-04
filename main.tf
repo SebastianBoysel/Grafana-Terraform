@@ -1,5 +1,11 @@
 terraform {
-  required_version = ">= 1.6.0"
+  cloud {
+    organization = "your-org-name"
+
+    workspaces {
+      name = "grafana-terraform"
+    }
+  }
 
   required_providers {
     grafana = {
