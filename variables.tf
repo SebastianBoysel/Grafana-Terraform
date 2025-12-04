@@ -1,5 +1,6 @@
 variable "tfe_token" {
   type        = string
+  sensitive   = true
 }
 
 variable "grafana_url" {

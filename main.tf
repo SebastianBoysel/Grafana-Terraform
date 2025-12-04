@@ -1,6 +1,6 @@
 terraform {
   cloud {
-    organization = "your-org-name"
+    organization = "sboysel"
 
     workspaces {
       name = "grafana-terraform"
